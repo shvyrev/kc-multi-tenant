@@ -146,6 +146,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8fda1dc67331fc9e",
-  "lastOpenFiles": []
+  "active": "404e42c3644f094b",
+  "lastOpenFiles": [
+    "docker/docker-compose.yaml",
+    "docker"
+  ]
 }
