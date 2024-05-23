@@ -11,9 +11,11 @@
             "id": "8fda1dc67331fc9e",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "attachments/CleanShot 2024-05-23 at 20.22.05.png"
+                "file": "Article(draft).md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -83,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "attachments/CleanShot 2024-05-23 at 20.22.05.png",
+                "file": "Article(draft).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "attachments/CleanShot 2024-05-23 at 20.22.05.png",
+                "file": "Article(draft).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "attachments/CleanShot 2024-05-23 at 20.22.05.png"
+                "file": "Article(draft).md"
               }
             }
           }
@@ -146,8 +148,8 @@
   },
   "active": "8fda1dc67331fc9e",
   "lastOpenFiles": [
-    "Article(draft).md",
     "attachments/CleanShot 2024-05-23 at 20.22.05.png",
+    "Article(draft).md",
     "attachments/img_1.png",
     "attachments",
     "README.md",

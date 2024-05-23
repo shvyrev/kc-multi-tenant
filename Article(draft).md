@@ -60,13 +60,102 @@ SPI Расширяет основной сервер Keycloak сущностям
 ## Рабочий процесс
 
 Наши следующие шаги :
-1. Развернем рабочее окружение Keycloak с плагином SPI .
+1. Развернем тестовое окружение Keycloak с плагином SPI .
 2. Создадим организацию.
 3. Создадим пользователя.
 5. Добавим пользователя в организацию.
 6. Рассмотрим из чего состоит токен доступа.
 7. Рассмотрим портал организатора.
 8. Рассмотрим, какие ограничения есть у данного плагина.
+
+#### Тестовое окружение
+
+Для разворачивания воспользуемся файлом `docker-compose` :
+
+> TODO docker-compose -> gist
+> добавить описание, что разворачиваем и зачем
+
+```docker-compose
+version: "3.9"
+
+volumes:
+  config_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: config/
+      o: bind
+  postgres_data:
+    driver: local
+
+services:
+#  init-config:
+#    build:
+#      context: ./docker
+#      dockerfile: Dockerfile.init
+#    volumes:
+#      - type: bind
+#        source: config/
+#        target: /opt/
+
+  postgres:
+    image: postgres:${KC_POSTGRES_IMAGE_TAG:-11}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    container_name: ${POSTGRES_CONTAINER_NAME:-postgres}
+    ports:
+      - ${KC_POSTGRES_PORT_MAPPING:-5432}:5432
+    restart: on-failure
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: password
+    healthcheck:
+      test: pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+
+  keycloak:
+    image: quay.io/phasetwo/phasetwo-keycloak:24.0.3
+    container_name: keycloak
+    entrypoint: [ "/opt/keycloak/bin/kc.sh", "start", "--spi-email-template-provider=freemarker-plus-mustache", "--spi-email-template-freemarker-plus-mustache-enabled=true", "--spi-theme-cache-themes=false" ]
+    volumes:
+      - config_data:/opt/keycloak/conf
+    environment:
+      #      PROXY_ADDRESS_FORWARDING: 'true'
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: password
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: password
+      KC_DB_URL_HOST: postgres
+      KC_DB_URL_DATABASE: keycloak
+      KC_DB_SCHEMA: public
+      KC_DB_USERNAME: keycloak
+      KC_DB_PASSWORD: password
+      KC_HOSTNAME_STRICT: 'false'
+      KC_HTTP_ENABLED: 'true'
+      KC_PROXY: 'edge'
+      KC_LOG_LEVEL: INFO
+      KC_FEATURES: preview
+    ports:
+      - 80:8080
+      - 443:8443
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/realms/master"]
+      start_period: 10s
+      interval: 30s
+      retries: 3
+      timeout: 5s
+```
 
 
 
