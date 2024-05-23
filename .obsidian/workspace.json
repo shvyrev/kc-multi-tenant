@@ -11,11 +11,9 @@
             "id": "8fda1dc67331fc9e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Article(draft).md",
-                "mode": "source",
-                "source": false
+                "file": "attachments/CleanShot 2024-05-23 at 20.22.05.png"
               }
             }
           }
@@ -85,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Article(draft).md",
+                "file": "attachments/CleanShot 2024-05-23 at 20.22.05.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Article(draft).md",
+                "file": "attachments/CleanShot 2024-05-23 at 20.22.05.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Article(draft).md"
+                "file": "attachments/CleanShot 2024-05-23 at 20.22.05.png"
               }
             }
           }
@@ -148,8 +146,9 @@
   },
   "active": "8fda1dc67331fc9e",
   "lastOpenFiles": [
-    "attachments/img_1.png",
     "Article(draft).md",
+    "attachments/CleanShot 2024-05-23 at 20.22.05.png",
+    "attachments/img_1.png",
     "attachments",
     "README.md",
     "docker/docker-compose.yaml",
