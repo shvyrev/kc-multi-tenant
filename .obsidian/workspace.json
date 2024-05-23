@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "Untitled.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "Untitled.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "Untitled.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "Untitled.md"
               }
             }
           }
@@ -146,8 +146,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "404e42c3644f094b",
+  "active": "8fda1dc67331fc9e",
   "lastOpenFiles": [
+    "Untitled.md",
+    "README.md",
     "docker/docker-compose.yaml",
     "docker"
   ]
