@@ -187,7 +187,7 @@ services:
 ![[CleanShot 2024-05-27 at 09.25.25.png]]
 Выберем роли и добавляем их пользователю нажав на кнопку **Save**.
 
-Посмотрим, как информация об организации будет добавлена в токен доступа. Для этого получим токен доступа:
+Посмотрим, как информация об организации будет добавлена в токен доступа. Для этого получим токен доступа и рассмотрим атрибуты payload.
 ```shell
 curl -X "POST" "https://bezeq.ru/realms/demo/protocol/openid-connect/token" \
      -H 'Content-Type: application/x-www-form-urlencoded; charset=utf-8' \
@@ -197,7 +197,52 @@ curl -X "POST" "https://bezeq.ru/realms/demo/protocol/openid-connect/token" \
      --data-urlencode "password=password" \
      --data-urlencode "scope=openid" \
      --data-urlencode "username=user@demo.org" \
-     | jq -r .access_token | cut -d . -f 2 | base64 --decode
+     | jq -r .access_token | cut -d . -f 2 | base64 --decode | sed -ne 's/$/ } &/p' | jq -r .
+```
+
+В результате получим атрибуты : 
+```json
+{
+  ...,
+  "organization-attribute": {
+    "a60e3949-83c6-4e1c-9aaa-75991468e00b": {
+      "name": "demo_organization",
+      "attributes": {
+        "product": [
+          "product_name"
+        ]
+      }
+    }
+  },
+  ...,
+  "active-organization": {
+    "role": [
+      "view-organization",
+      "view-members",
+      "view-roles",
+      "demo-organization-role"
+    ],
+    "name": "demo_organization",
+    "id": "a60e3949-83c6-4e1c-9aaa-75991468e00b",
+    "attribute": {
+      "product": [
+        "product_name"
+      ]
+    }
+  },
+  "organization-role": {
+    "a60e3949-83c6-4e1c-9aaa-75991468e00b": {
+      "roles": [
+        "view-organization",
+        "view-members",
+        "view-roles",
+        "demo-organization-role"
+      ],
+      "name": "demo_organization"
+    }
+  },
+  ...
+}
 ```
 
 Итак, мы получили базовое представление о том, что такое SPI Keycloak-org, как создать организацию, добавить роли и пользователей.
