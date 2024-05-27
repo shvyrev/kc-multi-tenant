@@ -205,7 +205,7 @@ curl -X "POST" "https://bezeq.ru/realms/demo/protocol/openid-connect/token" \
      | jq -r .access_token | cut -d . -f 2 | base64 --decode | sed -ne 's/$/ } &/p' | jq -r .
 ```
 
-В результате получим список атрибутов. Нас интересуют следующие атрибуты: 
+В результате получим список атрибутов. Нас интересуют следующие : 
 ```json
 {
   ...,
