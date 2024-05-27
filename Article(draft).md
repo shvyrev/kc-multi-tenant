@@ -282,7 +282,3 @@ curl -X "POST" "https://bezeq.ru/realms/demo/protocol/openid-connect/token" \
 
 ## Портал организатора
 
-
-
-
-
