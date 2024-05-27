@@ -1,4 +1,8 @@
 {
   "alwaysUpdateLinks": true,
-  "attachmentFolderPath": "attachments"
+  "attachmentFolderPath": "attachments",
+  "spellcheckDictionary": [
+    "соджержаться",
+    "токене"
+  ]
 }
