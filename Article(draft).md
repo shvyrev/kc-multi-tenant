@@ -196,7 +196,8 @@ curl -X "POST" "https://bezeq.ru/realms/demo/protocol/openid-connect/token" \
      --data-urlencode "grant_type=password" \
      --data-urlencode "password=password" \
      --data-urlencode "scope=openid" \
-     --data-urlencode "username=user@demo.org" | jq -r .access_token | cut -d . -f 2 | base64 --decode
+     --data-urlencode "username=user@demo.org" \
+     | jq -r .access_token | cut -d . -f 2 | base64 --decode
 ```
 
 Итак, мы получили базовое представление о том, что такое SPI Keycloak-org, как создать организацию, добавить роли и пользователей.
