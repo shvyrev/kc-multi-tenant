@@ -200,7 +200,7 @@ curl -X "POST" "https://bezeq.ru/realms/demo/protocol/openid-connect/token" \
      | jq -r .access_token | cut -d . -f 2 | base64 --decode | sed -ne 's/$/ } &/p' | jq -r .
 ```
 
-В результате получим атрибуты : 
+В результате получим список атрибутов. Нас интересуют следующие атрибуты: 
 ```json
 {
   ...,
@@ -244,6 +244,8 @@ curl -X "POST" "https://bezeq.ru/realms/demo/protocol/openid-connect/token" \
   ...
 }
 ```
+
+
 
 Итак, мы получили базовое представление о том, что такое SPI Keycloak-org, как создать организацию, добавить роли и пользователей.
 
