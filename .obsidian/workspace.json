@@ -69,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "aa6556a335016262",
@@ -149,6 +148,8 @@
   },
   "active": "8fda1dc67331fc9e",
   "lastOpenFiles": [
+    "attachments/img_1.png",
+    "Article(draft).md",
     "attachments/CleanShot 2024-05-27 at 17.02.53.png",
     "attachments/CleanShot 2024-05-27 at 17.01.11.png",
     "attachments/CleanShot 2024-05-27 at 16.59.15 1.png",
@@ -159,8 +160,6 @@
     "attachments/CleanShot 2024-05-27 at 16.35.39 1.png",
     "attachments/CleanShot 2024-05-27 at 16.35.39.png",
     "attachments/CleanShot 2024-05-27 at 16.31.56.png",
-    "attachments/CleanShot 2024-05-27 at 16.28.59.png",
-    "Article(draft).md",
     "attachments",
     "README.md",
     "docker/docker-compose.yaml",
